@@ -1,0 +1,199 @@
+[
+  {
+    "id": "organelle-hunt",
+    "titleKo": "소기관을 찾아라",
+    "concept": "organelle",
+    "kind": "hunt",
+    "promptKo": "3D 세포를 돌리고 소기관 목록을 이용해 다섯 소기관을 찾아보세요. 각 소기관이 무슨 일을 하는지도 함께 확인합니다.",
+    "setup": { "cellType": "animal" },
+    "predictionPromptKo": "세포의 활동을 조절하고 DNA를 보관하는 소기관은 무엇일까요?",
+    "predictionOptions": ["핵", "리보솜", "골지체", "리소좀"],
+    "predictionAnswer": "핵",
+    "predictionHintKo": "핵 안에는 세포의 설계 정보인 DNA가 들어 있어요.",
+    "explanationPromptKo": "리보솜의 역할로 알맞은 것은 무엇일까요?",
+    "explanationOptions": ["단백질을 만든다", "물을 저장한다", "빛을 흡수한다", "노폐물을 분해한다"],
+    "explanationAnswer": "단백질을 만든다",
+    "explanationHintKo": "리보솜은 세포질에 떠 있거나 거친 소포체에 붙어 있는 작은 알갱이예요.",
+    "options": ["단백질을 만든다", "물을 저장한다", "빛을 흡수한다", "노폐물을 분해한다"],
+    "answer": "단백질을 만든다",
+    "explanationKo": "리보솜은 아미노산을 연결해 단백질을 만드는 작은 공장입니다. 세포질에 떠 있거나 거친 소포체에 붙어 있습니다.",
+    "takeawayKo": "소기관마다 모양과 위치가 다르고, 그 구조가 하는 일과 연결됩니다.",
+    "targets": ["nucleus", "mitochondria", "ribosomes", "golgi", "lysosome"],
+    "difficulty": 1
+  },
+  {
+    "id": "animal-vs-plant",
+    "titleKo": "동물세포 vs 식물세포",
+    "concept": "plant",
+    "kind": "compare",
+    "promptKo": "식물세포에서만 볼 수 있는 구조를 찾아 선택해 보세요. 세포벽·엽록체·중심 액포가 동물세포에는 없다는 점과 비교해 보세요.",
+    "setup": { "cellType": "plant" },
+    "predictionPromptKo": "식물세포에만 있고 동물세포에는 없는 구조를 모두 고른 것은 무엇일까요?",
+    "predictionOptions": [
+      "세포벽, 엽록체, 중심 액포",
+      "세포막, 핵, 미토콘드리아",
+      "리보솜, 골지체, 소포체",
+      "세포질, 핵, 세포막"
+    ],
+    "predictionAnswer": "세포벽, 엽록체, 중심 액포",
+    "predictionHintKo": "식물세포는 단단한 겉면, 초록색 소기관, 큰 물주머니를 가지고 있어요.",
+    "explanationPromptKo": "이 모형에서 동물세포에는 있지만 식물세포에는 없는 소기관은 무엇일까요?",
+    "explanationOptions": [
+      "리소좀과 중심체",
+      "엽록체와 세포벽",
+      "중심 액포와 핵",
+      "미토콘드리아와 리보솜"
+    ],
+    "explanationAnswer": "리소좀과 중심체",
+    "explanationHintKo": "식물세포의 대표 구조인 세포벽, 엽록체, 중심 액포를 먼저 떠올려 보세요.",
+    "options": ["리소좀과 중심체", "엽록체와 세포벽", "중심 액포와 핵", "미토콘드리아와 리보솜"],
+    "answer": "리소좀과 중심체",
+    "explanationKo": "이 모형에서는 동물세포에 리소좀과 중심체를 표시하고, 식물세포에는 세포벽·엽록체·중심 액포를 표시합니다. 실제 식물세포도 리소좀과 비슷한 기능을 하는 구조를 가지고 있습니다.",
+    "takeawayKo": "두 세포 모두 핵과 미토콘드리아를 공유하지만, 식물세포는 세포벽과 엽록체, 중심 액포로 단단하고 팽팽한 모양을 유지합니다.",
+    "targets": ["cell-wall", "chloroplast", "central-vacuole"],
+    "difficulty": 1
+  },
+  {
+    "id": "osmosis-predict",
+    "titleKo": "물은 어디로 갈까?",
+    "concept": "osmosis",
+    "kind": "osmosis-cases",
+    "promptKo": "세 가지 용액에서 동물세포의 부피 변화를 먼저 예측하고, 실험을 실행해 확인해 보세요.",
+    "setup": { "cellType": "animal", "externalOsmolarity": 300 },
+    "predictionPromptKo": "물은 용질 농도가 어느 쪽으로 이동할까요?",
+    "predictionOptions": ["용질 농도가 높은 쪽", "용질 농도가 낮은 쪽", "항상 세포 밖으로"],
+    "predictionAnswer": "용질 농도가 높은 쪽",
+    "predictionHintKo": "물은 소금기 같은 용질이 더 많은 쪽으로 이동해 농도를 맞추려고 해요.",
+    "explanationPromptKo": "물이 세포 안으로 들어오는 조건은 무엇일까요?",
+    "explanationOptions": [
+      "세포 밖 용질 농도가 세포 안보다 낮을 때",
+      "세포 밖 용질 농도가 세포 안보다 높을 때",
+      "온도가 0도일 때",
+      "세포막이 없을 때"
+    ],
+    "explanationAnswer": "세포 밖 용질 농도가 세포 안보다 낮을 때",
+    "explanationHintKo": "저장액은 세포 안보다 용질이 적은 묽은 용액이에요. 물이 어느 쪽으로 갈지 생각해 보세요.",
+    "options": [
+      "세포 밖 용질 농도가 세포 안보다 낮을 때",
+      "세포 밖 용질 농도가 세포 안보다 높을 때",
+      "온도가 0도일 때",
+      "세포막이 없을 때"
+    ],
+    "answer": "세포 밖 용질 농도가 세포 안보다 낮을 때",
+    "explanationKo": "세포 밖이 저장액이면 세포 안의 용질 농도가 더 높아 물이 세포 안으로 들어옵니다. 반대로 고장액에서는 물이 세포 밖으로 나갑니다.",
+    "takeawayKo": "물은 용질 농도가 높은 쪽으로 이동합니다. 세포 안팎의 농도 차이가 물의 방향을 결정합니다.",
+    "cases": [
+      {
+        "labelKo": "저장액 150 mOsm/L",
+        "osmolarity": 150,
+        "options": ["팽창한다 (결국 터짐)", "수축한다", "변화 없다"],
+        "answer": "팽창한다 (결국 터짐)"
+      },
+      {
+        "labelKo": "등장액 300 mOsm/L",
+        "osmolarity": 300,
+        "options": ["팽창한다 (결국 터짐)", "수축한다", "변화 없다"],
+        "answer": "변화 없다"
+      },
+      {
+        "labelKo": "고장액 600 mOsm/L",
+        "osmolarity": 600,
+        "options": ["팽창한다 (결국 터짐)", "수축한다", "변화 없다"],
+        "answer": "수축한다"
+      }
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "plant-wall",
+    "titleKo": "식물세포는 왜 터지지 않을까?",
+    "concept": "plant",
+    "kind": "plant-wall",
+    "promptKo": "식물세포를 저장액과 고장액에 차례로 넣어 보세요. 세포벽과 세포막의 움직임을 비교합니다.",
+    "setup": { "cellType": "plant", "externalOsmolarity": 300 },
+    "predictionPromptKo": "식물세포를 저장액(묽은 용액)에 넣으면 어떻게 될까요?",
+    "predictionOptions": ["팽팽해지지만 터지지 않는다", "터진다", "쭈그러든다", "아무 변화 없다"],
+    "predictionAnswer": "팽팽해지지만 터지지 않는다",
+    "predictionHintKo": "식물세포에는 세포막 바깥을 둘러싼 단단한 세포벽이 있어요.",
+    "explanationPromptKo": "고장액에서 세포막이 세포벽에서 떨어지는 현상을 무엇이라고 할까요?",
+    "explanationOptions": ["원형질 분리", "세포 분열", "광합성", "삼투 팽창"],
+    "explanationAnswer": "원형질 분리",
+    "explanationHintKo": "고장액에서는 물이 세포 밖으로 나가 세포 안쪽 부피가 줄어듭니다. 세포벽은 그대로 남아요.",
+    "options": ["원형질 분리", "세포 분열", "광합성", "삼투 팽창"],
+    "answer": "원형질 분리",
+    "explanationKo": "식물세포가 고장액에 있으면 물을 잃어 세포막이 세포벽에서 떨어집니다. 이것을 원형질 분리(플라스몰리시스)라고 합니다. 저장액에서는 중심 액포가 물을 머금어 팽압이 커지지만, 세포벽이 팽창을 제한합니다.",
+    "takeawayKo": "식물세포는 세포벽 덕분에 팽팽해져도 터지지 않고, 물을 잃으면 원형질 분리가 일어납니다.",
+    "scenarios": [
+      { "labelKo": "저장액 150", "osmolarity": 150 },
+      { "labelKo": "고장액 600", "osmolarity": 600 }
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "mitosis-order",
+    "titleKo": "분열 순서",
+    "concept": "mitosis",
+    "kind": "order",
+    "promptKo": "여섯 단계 카드를 간기부터 세포질 분열까지 순서대로 놓아 보세요. 카드를 누르면 다음 자리에 들어갑니다.",
+    "setup": { "cellType": "animal", "stageIndex": 0 },
+    "predictionPromptKo": "세포 분열 전에 DNA를 복제하며 준비하는 단계는 무엇일까요?",
+    "predictionOptions": ["간기", "전기", "중기", "후기"],
+    "predictionAnswer": "간기",
+    "predictionHintKo": "분열이 시작되기 전, 세포는 DNA를 복제하고 필요한 물질을 준비합니다.",
+    "explanationPromptKo": "후기에서 일어나는 일로 알맞은 것은 무엇일까요?",
+    "explanationOptions": [
+      "자매 염색분체가 분리되어 양극으로 이동한다",
+      "염색체가 적도면에 정렬한다",
+      "핵막이 다시 만들어진다",
+      "세포질이 두 개로 나뉜다"
+    ],
+    "explanationAnswer": "자매 염색분체가 분리되어 양극으로 이동한다",
+    "explanationHintKo": "후기는 중기 다음, 말기 전입니다. 방추사가 무언가를 잡아당기는 단계예요.",
+    "options": [
+      "자매 염색분체가 분리되어 양극으로 이동한다",
+      "염색체가 적도면에 정렬한다",
+      "핵막이 다시 만들어진다",
+      "세포질이 두 개로 나뉜다"
+    ],
+    "answer": "자매 염색분체가 분리되어 양극으로 이동한다",
+    "explanationKo": "후기에는 자매 염색분체가 분리되어 각각 독립된 염색체가 되고, 방추사에 끌려 세포의 양쪽 극으로 이동합니다.",
+    "takeawayKo": "간기 → 전기 → 중기 → 후기 → 말기 → 세포질 분열 순서로 진행되며, 후기에 자매 염색분체가 분리됩니다.",
+    "difficulty": 2
+  },
+  {
+    "id": "mitosis-explain",
+    "titleKo": "염색체는 어떻게 나뉠까?",
+    "concept": "mitosis",
+    "kind": "anaphase",
+    "promptKo": "후기 장면으로 이동해 염색체가 양극으로 나뉘는 모습을 관찰하세요. 단계를 바꾸어 앞뒤 과정도 비교할 수 있습니다.",
+    "setup": { "cellType": "animal", "stageIndex": 3 },
+    "predictionPromptKo": "후기에 자매 염색분체는 어떻게 될까요?",
+    "predictionOptions": [
+      "분리되어 반대쪽 극으로 이동한다",
+      "한 덩어리로 뭉친다",
+      "적도면에 정렬한다",
+      "사라진다"
+    ],
+    "predictionAnswer": "분리되어 반대쪽 극으로 이동한다",
+    "predictionHintKo": "염색분체 두 개가 붙어 있던 곳이 갈라지는 단계를 떠올려 보세요.",
+    "explanationPromptKo": "방추사의 역할로 알맞은 것은 무엇일까요?",
+    "explanationOptions": [
+      "염색체를 잡아당겨 극으로 이동시킨다",
+      "DNA를 복제한다",
+      "세포벽을 만든다",
+      "물을 저장한다"
+    ],
+    "explanationAnswer": "염색체를 잡아당겨 극으로 이동시킨다",
+    "explanationHintKo": "방추사는 세포의 양극에서 뻗어 나와 염색체의 동원체에 붙습니다.",
+    "options": [
+      "염색체를 잡아당겨 극으로 이동시킨다",
+      "DNA를 복제한다",
+      "세포벽을 만든다",
+      "물을 저장한다"
+    ],
+    "answer": "염색체를 잡아당겨 극으로 이동시킨다",
+    "explanationKo": "방추사는 세포의 양극에서 뻗어 나와 염색체에 붙고, 자매 염색분체를 반대쪽 극으로 끌어당깁니다. 그래서 두 딸세포가 같은 유전 정보를 받게 됩니다.",
+    "takeawayKo": "방추사가 염색체를 양극으로 끌어당기고, 세포질 분열이 끝나면 같은 염색체 수를 가진 두 딸세포가 만들어집니다.",
+    "difficulty": 3
+  }
+]

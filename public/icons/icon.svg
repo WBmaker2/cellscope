@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="CellScope">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="70%">
+      <stop offset="0" stop-color="#183028"/>
+      <stop offset="1" stop-color="#070f0c"/>
+    </radialGradient>
+    <radialGradient id="cell" cx="45%" cy="40%" r="65%">
+      <stop offset="0" stop-color="#8be7d1" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#2f8a78" stop-opacity=".24"/>
+    </radialGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#bg)"/>
+  <circle cx="256" cy="256" r="182" fill="url(#cell)" stroke="#71e4d2" stroke-width="7"/>
+  <circle cx="305" cy="299" r="56" fill="#9b7de6"/>
+  <circle cx="318" cy="310" r="18" fill="#5e3fa8"/>
+  <path d="M189 220l42-42" stroke="#eb8954" stroke-width="20" stroke-linecap="round"/>
+  <path d="M174 335l-34 24" stroke="#eb8954" stroke-width="16" stroke-linecap="round"/>
+  <path d="M342 180l42 12" stroke="#eb8954" stroke-width="16" stroke-linecap="round"/>
+  <ellipse cx="174" cy="292" rx="28" ry="14" fill="#9fd37d" transform="rotate(-28 174 292)"/>
+  <circle cx="240" cy="154" r="6" fill="#c7f36b"/>
+  <circle cx="280" cy="374" r="5" fill="#c7f36b"/>
+  <circle cx="366" cy="280" r="6" fill="#c7f36b"/>
+  <circle cx="150" cy="240" r="5" fill="#c7f36b"/>
+</svg>

@@ -1,0 +1,399 @@
+.teacher-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.teacher-card {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, rgba(25, 43, 34, 0.9), rgba(14, 26, 20, 0.92));
+  box-shadow: var(--shadow-md);
+}
+
+.card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.card-copy {
+  margin-bottom: 15px;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.preset-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.preset-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  min-height: 106px;
+  padding: 13px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--muted);
+  text-align: left;
+  transition:
+    border-color 0.2s var(--ease),
+    background 0.2s var(--ease),
+    transform 0.2s var(--ease);
+}
+
+.preset-card:hover {
+  transform: translateY(-1px);
+  border-color: rgba(199, 243, 107, 0.3);
+  background: rgba(199, 243, 107, 0.05);
+}
+
+.preset-icon {
+  color: var(--sage);
+}
+
+.preset-card strong {
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+}
+
+.preset-card > span:last-child {
+  color: var(--muted-dim);
+  font-size: 0.64rem;
+  line-height: 1.4;
+}
+
+.tool-action-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tool-action {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--muted);
+  text-align: left;
+  transition:
+    border-color 0.2s var(--ease),
+    background 0.2s var(--ease);
+}
+
+.tool-action:hover {
+  border-color: var(--line-strong);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.tool-action-icon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  background: rgba(159, 199, 164, 0.08);
+  color: var(--sage);
+}
+
+.tool-action-icon.tool-danger {
+  background: rgba(255, 139, 130, 0.08);
+  color: var(--danger);
+}
+
+.tool-action strong {
+  display: block;
+  color: var(--ink-soft);
+  font-size: 0.84rem;
+}
+
+.tool-action small {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted-dim);
+  font-size: 0.66rem;
+  line-height: 1.45;
+}
+
+.privacy-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin-top: 14px;
+  color: var(--muted-dim);
+  font-size: 0.68rem;
+  line-height: 1.5;
+}
+
+.teacher-missions {
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, rgba(20, 36, 28, 0.72), rgba(11, 22, 16, 0.78));
+}
+
+.answer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.answer-card {
+  padding: 15px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.018);
+}
+
+.answer-head {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: start;
+}
+
+.answer-title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.answer-title-row h3 {
+  font-size: 0.96rem;
+}
+
+.answer-head p {
+  margin-top: 4px;
+  color: var(--muted-dim);
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+.answer-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(183, 214, 192, 0.14);
+}
+
+.answer-row {
+  display: grid;
+  grid-template-columns: 100px minmax(0, 1fr);
+  gap: 12px;
+  font-size: 0.75rem;
+  line-height: 1.55;
+}
+
+.answer-row strong {
+  color: var(--sage);
+  font-weight: 700;
+}
+
+.answer-row span {
+  color: var(--ink-soft);
+}
+
+.answer-hidden {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(183, 214, 192, 0.14);
+  color: var(--muted-dim);
+  font-size: 0.68rem;
+}
+
+.teacher-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 24px;
+  padding: 18px 20px;
+  border-left: 2px solid var(--sage);
+  border-radius: 0 14px 14px 0;
+  background: rgba(159, 199, 164, 0.05);
+  color: var(--muted);
+}
+
+.teacher-note h2 {
+  margin-bottom: 4px;
+  font-size: 0.95rem;
+}
+
+.teacher-note p {
+  font-size: 0.76rem;
+  line-height: 1.62;
+}
+
+.worksheet {
+  display: none;
+}
+
+@media print {
+  @page {
+    margin: 13mm;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    color: #111111 !important;
+    overflow: visible !important;
+  }
+
+  body::before,
+  .app-header,
+  .bottom-nav,
+  .app-footer,
+  .skip-link,
+  .teacher-view > *:not(.worksheet) {
+    display: none !important;
+  }
+
+  .app-main {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .teacher-view {
+    display: block !important;
+  }
+
+  .worksheet {
+    display: block !important;
+    color: #111111 !important;
+    background: #ffffff !important;
+    font-family: "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  }
+
+  .worksheet-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #222222;
+  }
+
+  .worksheet-kicker {
+    font-size: 9pt;
+    letter-spacing: 0.12em;
+    color: #555555;
+  }
+
+  .worksheet h1 {
+    margin: 4px 0 0;
+    font-size: 20pt;
+    color: #111111;
+  }
+
+  .worksheet-name {
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+    font-size: 9pt;
+    white-space: nowrap;
+  }
+
+  .worksheet-line {
+    display: inline-block;
+    width: 62px;
+    border-bottom: 1px solid #333333;
+    height: 13px;
+  }
+
+  .worksheet-instructions {
+    margin: 10px 0 14px;
+    font-size: 9pt;
+    line-height: 1.5;
+    color: #333333;
+  }
+
+  .worksheet-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .worksheet-grid section {
+    min-width: 0;
+  }
+
+  .worksheet-grid h2 {
+    margin-bottom: 5px;
+    padding: 4px 8px;
+    border-left: 4px solid #333333;
+    background: #f0f0f0;
+    font-size: 12pt;
+    color: #111111;
+  }
+
+  .worksheet-svg {
+    width: 100%;
+    height: auto;
+    background: #ffffff;
+  }
+
+  .worksheet-labels {
+    margin-top: 8px;
+  }
+
+  .worksheet-labels li {
+    display: grid;
+    grid-template-columns: 16px 1fr;
+    grid-template-areas:
+      "num name"
+      "num function";
+    column-gap: 6px;
+    padding: 3px 0;
+    font-size: 8.4pt;
+    break-inside: avoid;
+  }
+
+  .blank-number {
+    grid-area: num;
+    font-weight: 700;
+  }
+
+  .blank-name {
+    grid-area: name;
+    border-bottom: 1px solid #777777;
+    height: 15px;
+  }
+
+  .blank-function {
+    grid-area: function;
+    border-bottom: 1px solid #c7c7c7;
+    height: 15px;
+    margin-top: 2px;
+  }
+
+  .worksheet-foot {
+    margin-top: 12px;
+    padding-top: 8px;
+    border-top: 1px solid #cccccc;
+    font-size: 7.6pt;
+    color: #666666;
+  }
+}

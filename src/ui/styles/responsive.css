@@ -1,0 +1,494 @@
+@media (max-width: 1320px) {
+  .explorer-layout,
+  .lab-layout {
+    grid-template-columns: 288px minmax(0, 1fr) 316px;
+    gap: 16px;
+  }
+
+  .mission-layout {
+    grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.92fr);
+  }
+
+  .mission-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1100px) {
+  .app-header {
+    grid-template-columns: auto 1fr;
+    gap: 18px;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .header-actions {
+    justify-self: end;
+  }
+
+  .explorer-layout,
+  .lab-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .viewport-panel,
+  .panel-left,
+  .panel-right {
+    width: 100%;
+  }
+
+  .viewport-panel {
+    order: -1;
+  }
+
+  .panel-left {
+    order: 0;
+  }
+
+  .panel-right {
+    order: 1;
+  }
+
+  .panel {
+    border-radius: var(--radius-md);
+  }
+
+  .panel > summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 15px 18px;
+    color: var(--ink-soft);
+    font-size: 0.86rem;
+    font-weight: 700;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .panel > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .panel > summary::after {
+    content: "+";
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 1rem;
+  }
+
+  .panel[open] > summary::after {
+    content: "−";
+  }
+
+  .panel-body {
+    border-top: 1px solid var(--line);
+  }
+
+  .panel:not([open]) > .panel-body {
+    display: none;
+  }
+
+  .organelle-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4px;
+  }
+
+  .viewport {
+    height: clamp(340px, 48vh, 600px);
+  }
+
+  .mission-layout {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mission-viewport-panel {
+    position: static;
+  }
+
+  .mission-panel {
+    position: static;
+  }
+
+  .mission-viewport {
+    height: clamp(340px, 48vh, 600px);
+  }
+
+  .mission-head-main {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .mission-head-badges {
+    justify-content: flex-start;
+  }
+
+  .teacher-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+  .app-header {
+    padding: 11px 16px;
+  }
+
+  .brand-copy span {
+    display: none;
+  }
+
+  .progress-pill {
+    display: none;
+  }
+
+  .help-button span {
+    display: none;
+  }
+
+  .help-button {
+    min-width: 40px;
+    padding: 8px;
+    justify-content: center;
+  }
+
+  .app-main {
+    padding: 20px 16px 110px;
+  }
+
+  .app-footer {
+    display: none;
+  }
+
+  .bottom-nav {
+    position: fixed;
+    right: 12px;
+    bottom: max(12px, env(safe-area-inset-bottom));
+    left: 12px;
+    z-index: 70;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 3px;
+    padding: 6px;
+    border: 1px solid rgba(183, 214, 192, 0.18);
+    border-radius: 22px;
+    background: rgba(8, 17, 13, 0.92);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(18px);
+  }
+
+  .bottom-nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    min-height: 48px;
+    padding: 6px 2px 4px;
+    border-radius: 15px;
+    color: var(--muted-dim);
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  .bottom-nav-link.is-active {
+    color: var(--lime);
+    background: rgba(199, 243, 107, 0.1);
+  }
+
+  .view-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  .view-head-meta {
+    justify-content: flex-start;
+    padding-bottom: 0;
+  }
+
+  .view-sub {
+    font-size: 0.9rem;
+  }
+
+  .strip-grid,
+  .mission-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mission-progress-band {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .teacher-invite {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .quiz-slots {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .quiz-slot {
+    min-height: 76px;
+  }
+
+  .quiz-head,
+  .section-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .concept-band {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .concept-equation {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .viewport {
+    height: 48vh;
+    min-height: 340px;
+    border-radius: 22px;
+  }
+
+  .lab-viewport,
+  .mission-viewport {
+    height: 48vh;
+    min-height: 340px;
+  }
+
+  .viewport-topbar {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .viewport-tools {
+    justify-content: flex-start;
+  }
+
+  .tool-btn span {
+    display: none;
+  }
+
+  .tool-btn {
+    width: 36px;
+    height: 36px;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .specimen-tag {
+    padding: 6px 9px;
+    font-size: 0.58rem;
+  }
+
+  .scene-hint {
+    display: none;
+  }
+
+  .microscope-card {
+    right: 10px;
+    bottom: 10px;
+    width: min(232px, calc(100% - 20px));
+  }
+
+  .microscope-card canvas {
+    height: 142px;
+  }
+
+  .solution-legend {
+    left: 10px;
+    bottom: 10px;
+    font-size: 0.54rem;
+  }
+
+  .mission-scene-hud {
+    bottom: 12px;
+    font-size: 0.58rem;
+  }
+
+  .organelle-list {
+    grid-template-columns: 1fr;
+  }
+
+  .lab-controls {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .time-readout {
+    align-items: flex-start;
+    padding-left: 2px;
+  }
+
+  .measure-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .target-grid,
+  .scenario-grid,
+  .preset-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stage-timeline {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .timeline-line {
+    display: none;
+  }
+
+  .quiz-actions {
+    width: 100%;
+  }
+
+  .quiz-actions .btn {
+    flex: 1;
+  }
+
+  .quiz-slots {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mission-step,
+  .teacher-card,
+  .teacher-missions,
+  .quiz-section,
+  .mission-strip {
+    padding: 17px;
+  }
+
+  .mission-step-pill strong {
+    display: none;
+  }
+
+  .mission-step-pill span {
+    width: 24px;
+    height: 24px;
+  }
+
+  .mission-progress {
+    justify-content: space-between;
+  }
+
+  .mission-step-line {
+    min-width: 8px;
+  }
+
+  .answer-head {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .answer-head .difficulty {
+    display: none;
+  }
+
+  .answer-row {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .help-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .help-grid section:nth-child(3) {
+    grid-column: auto;
+  }
+
+  .app-dialog {
+    max-height: 90vh;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .btn-pulse::after {
+    display: none;
+  }
+}
+
+.reduced-motion *,
+.reduced-motion *::before,
+.reduced-motion *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+}
+
+.reduced-motion .btn-pulse::after {
+  display: none;
+}
+
+@media (min-width: 861px) and (max-width: 1100px) {
+  .app-main {
+    padding-bottom: 112px;
+  }
+
+  .bottom-nav {
+    position: fixed;
+    right: 18px;
+    bottom: max(14px, env(safe-area-inset-bottom));
+    left: 18px;
+    z-index: 70;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 3px;
+    padding: 6px;
+    border: 1px solid rgba(183, 214, 192, 0.18);
+    border-radius: 22px;
+    background: rgba(8, 17, 13, 0.92);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(18px);
+  }
+
+  .bottom-nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    min-height: 48px;
+    padding: 6px 2px 4px;
+    border-radius: 15px;
+    color: var(--muted-dim);
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  .bottom-nav-link.is-active {
+    color: var(--lime);
+    background: rgba(199, 243, 107, 0.1);
+  }
+}
