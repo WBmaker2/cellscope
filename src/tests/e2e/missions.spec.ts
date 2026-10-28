@@ -21,6 +21,7 @@ async function completeOrganelleHunt(page: Page, keyboard = false): Promise<void
   }
 
   await expect(page.getByRole('heading', { name: '다섯 소기관을 찾아 선택하세요.' })).toBeVisible();
+  await expect(page.locator('#observe-heading')).toBeFocused();
   for (const id of HUNT_TARGETS) {
     const target = page.locator(`[data-testid="mission-panel"] [data-target="${id}"]`);
     if (keyboard) {

@@ -523,9 +523,7 @@ export class MissionDetailView {
     if (this.nursingFocus) {
       const selector = this.nursingFocus;
       this.nursingFocus = null;
-      requestAnimationFrame(() => {
-        this.panel.querySelector<HTMLElement>(selector)?.focus({ preventScroll: true });
-      });
+      this.panel.querySelector<HTMLElement>(selector)?.focus({ preventScroll: true });
     }
   }
 

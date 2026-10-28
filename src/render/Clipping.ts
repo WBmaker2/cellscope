@@ -61,9 +61,9 @@ export class CellClipper {
 
   private updateCap(): void {
     const extents = EXTENTS[this.cellType];
-    const constant = extents.z * (1 - this.progress);
-    this.plane.constant = constant;
     const visible = this.progress > 0.015;
+    const constant = visible ? extents.z * (1 - this.progress) : extents.z + 0.5;
+    this.plane.constant = constant;
     this.capGroup.visible = visible;
     if (!visible) return;
 

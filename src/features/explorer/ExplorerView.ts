@@ -54,7 +54,7 @@ export class ExplorerView {
           </div>
           <div class="view-head-meta">
             <span class="badge badge-warn">${icon('info', 15)} 개념 모형 · 축척 아님</span>
-            <span class="badge">${organelles.length}개 구조</span>
+            <span class="badge" data-testid="structure-count">${organelles.length}개 구조</span>
           </div>
         </header>
 
@@ -84,7 +84,7 @@ export class ExplorerView {
 
               <div class="list-head">
                 <h2>소기관</h2>
-                <span class="list-count">${organelles.length}개</span>
+                <span class="list-count" data-testid="organelle-count">${organelles.length}개</span>
               </div>
               <div class="organelle-list" aria-label="${cell.nameKo} 소기관 목록" data-testid="organelle-list"></div>
             </div>
@@ -319,6 +319,11 @@ export class ExplorerView {
     });
     const meta = CELL_TYPES[cellType];
     this.specimenTag.innerHTML = `<span class="pulse-dot" aria-hidden="true"></span>표본 · ${meta.nameKo}`;
+    const count = getOrganelles(cellType).length;
+    const structureCount = this.container.querySelector('[data-testid="structure-count"]');
+    const organelleCount = this.container.querySelector('[data-testid="organelle-count"]');
+    if (structureCount) structureCount.textContent = `${count}개 구조`;
+    if (organelleCount) organelleCount.textContent = `${count}개`;
     this.scene?.setCellType(cellType);
     this.inset?.setCellType(cellType);
     this.renderOrganelleList();

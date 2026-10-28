@@ -8,6 +8,8 @@ test.describe('explorer', () => {
 
     await page.getByTestId('cell-toggle-plant').click();
     await expect(page.getByTestId('cell-toggle-plant')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.getByTestId('structure-count')).toHaveText('12개 구조');
+    await expect(page.getByTestId('organelle-count')).toHaveText('12개');
     await expect(page.getByTestId('organelle-item-cell-wall')).toBeVisible();
 
     await page.getByTestId('organelle-item-chloroplast').click();
