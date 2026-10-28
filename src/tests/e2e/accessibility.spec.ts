@@ -43,7 +43,7 @@ test.describe('accessibility', () => {
     const toggle = page.locator('#help-reduced-motion');
     await toggle.check();
     await expect(page.locator('html')).toHaveClass(/reduced-motion/);
-    const saved = await page.evaluate(() => localStorage.getItem('cellscope.progress.v1'));
+    const saved = await page.evaluate(() => localStorage.getItem('cellscope.progress.v2'));
     expect(saved).toContain('"reducedMotion":true');
     await page.reload();
     await expect(page.locator('html')).toHaveClass(/reduced-motion/);

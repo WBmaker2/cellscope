@@ -32,6 +32,7 @@ async function completeOrganelleHunt(page: Page, keyboard = false): Promise<void
   }
 
   await expect(page.getByRole('heading', { name: '리보솜의 역할로 알맞은 것은 무엇일까요?' })).toBeVisible();
+  await expect(page.locator('#explain-heading')).toBeFocused();
   if (keyboard) {
     const answer = page.getByRole('radio', { name: '단백질을 만든다', exact: true });
     await answer.focus();

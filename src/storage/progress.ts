@@ -1,6 +1,7 @@
 import type { CellTypeId } from '../bio/constants';
 
-export const PROGRESS_KEY = 'cellscope.progress.v1';
+export const PROGRESS_KEY = 'cellscope.progress.v2';
+export const LEGACY_PROGRESS_KEY = 'cellscope.progress.v1';
 
 export interface SavedProgress {
   completed: string[];
@@ -21,7 +22,7 @@ export const EMPTY_PROGRESS: SavedProgress = {
   view: {
     showLabels: true,
     showMicroscopeInset: false,
-    autoRotate: true,
+    autoRotate: false,
   },
   reducedMotion: null,
 };
@@ -51,7 +52,7 @@ function sanitize(raw: unknown): SavedProgress {
       showLabels: typeof viewRaw.showLabels === 'boolean' ? viewRaw.showLabels : true,
       showMicroscopeInset:
         typeof viewRaw.showMicroscopeInset === 'boolean' ? viewRaw.showMicroscopeInset : false,
-      autoRotate: typeof viewRaw.autoRotate === 'boolean' ? viewRaw.autoRotate : true,
+      autoRotate: typeof viewRaw.autoRotate === 'boolean' ? viewRaw.autoRotate : false,
     },
     reducedMotion: typeof raw.reducedMotion === 'boolean' ? raw.reducedMotion : null,
   };
@@ -60,9 +61,16 @@ function sanitize(raw: unknown): SavedProgress {
 export function loadProgress(): SavedProgress {
   if (typeof window === 'undefined') return { ...EMPTY_PROGRESS, view: { ...EMPTY_PROGRESS.view } };
   try {
-    const raw = window.localStorage.getItem(PROGRESS_KEY);
+    const current = window.localStorage.getItem(PROGRESS_KEY);
+    const legacy = current ? null : window.localStorage.getItem(LEGACY_PROGRESS_KEY);
+    const raw = current ?? legacy;
     if (!raw) return { ...EMPTY_PROGRESS, view: { ...EMPTY_PROGRESS.view } };
-    return sanitize(JSON.parse(raw));
+    const progress = sanitize(JSON.parse(raw));
+    if (legacy) {
+      progress.view.autoRotate = false;
+      saveProgress(progress);
+    }
+    return progress;
   } catch {
     return { ...EMPTY_PROGRESS, view: { ...EMPTY_PROGRESS.view } };
   }
@@ -81,6 +89,7 @@ export function clearProgress(): void {
   if (typeof window === 'undefined') return;
   try {
     window.localStorage.removeItem(PROGRESS_KEY);
+    window.localStorage.removeItem(LEGACY_PROGRESS_KEY);
   } catch {
     // 무시
   }

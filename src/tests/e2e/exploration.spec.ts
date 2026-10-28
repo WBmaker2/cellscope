@@ -60,3 +60,34 @@ test.describe('explorer', () => {
     await expect(page).toHaveURL(/#\/explore$/);
   });
 });
+
+test.describe('comfort and storage migration', () => {
+  test('keeps auto-rotation off by default', async ({ page }) => {
+    await page.goto('/#/explore');
+    await expect(page.locator('[data-action="toggle-rotate"]')).toHaveAttribute('aria-pressed', 'false');
+  });
+
+  test('migrates v1 progress while turning auto-rotation off', async ({ page }) => {
+    await page.goto('/#/explore');
+    await page.evaluate(() => {
+      localStorage.clear();
+      localStorage.setItem(
+        'cellscope.progress.v1',
+        JSON.stringify({
+          completed: ['organelle-hunt'],
+          answers: { 'organelle-hunt': '단백질을 만든다' },
+          lastCellType: 'plant',
+          view: { showLabels: true, showMicroscopeInset: false, autoRotate: true },
+          reducedMotion: false,
+        }),
+      );
+    });
+    await page.reload();
+    await expect(page.getByTestId('header-progress')).toContainText('미션 1 / 6');
+    await expect(page.locator('[data-action="toggle-rotate"]')).toHaveAttribute('aria-pressed', 'false');
+    await expect(page.getByTestId('cell-scene')).toBeVisible();
+    const saved = await page.evaluate(() => localStorage.getItem('cellscope.progress.v2'));
+    expect(saved).toContain('"completed":["organelle-hunt"]');
+    expect(saved).toContain('"autoRotate":false');
+  });
+});

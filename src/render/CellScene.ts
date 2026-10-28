@@ -209,6 +209,7 @@ export class CellScene {
           material.opacity = active ? Math.min(base, 0.055) : base;
         }
         material.depthWrite = false;
+        material.side = active ? THREE.DoubleSide : THREE.FrontSide;
       }
     }
   }

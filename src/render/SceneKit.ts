@@ -36,7 +36,7 @@ export class SceneKit {
   ) {
     this.host = host;
     this.onFrame = onFrame;
-    this.autoRotate = options.autoRotate ?? true;
+    this.autoRotate = options.autoRotate ?? false;
     this.reducedMotion = options.reducedMotion ?? false;
 
     const width = Math.max(1, host.clientWidth);

@@ -11,6 +11,8 @@ interface LabelRecord {
   item: LabelItem;
   element: HTMLSpanElement;
   anchor: THREE.Vector3;
+  currentX: number | null;
+  currentY: number | null;
 }
 
 export class LabelLayer {
@@ -41,6 +43,8 @@ export class LabelLayer {
         item,
         element,
         anchor: new THREE.Vector3(item.anchor.x, item.anchor.y, item.anchor.z),
+        currentX: null,
+        currentY: null,
       };
     });
     this.applyVisibility();
@@ -99,7 +103,11 @@ export class LabelLayer {
       x = Math.max(labelWidth / 2 + 8, Math.min(width - labelWidth / 2 - 8, x));
       y = Math.max(labelHeight / 2 + 8, Math.min(height - labelHeight / 2 - 8, y));
       placed.push({ x, y, width: labelWidth, height: labelHeight });
-      record.element.style.transform = `translate3d(${x.toFixed(1)}px, ${y.toFixed(1)}px, 0) translate(-50%, -50%)`;
+      const currentX = record.currentX === null ? x : record.currentX + (x - record.currentX) * 0.32;
+      const currentY = record.currentY === null ? y : record.currentY + (y - record.currentY) * 0.32;
+      record.currentX = currentX;
+      record.currentY = currentY;
+      record.element.style.transform = `translate3d(${currentX.toFixed(1)}px, ${currentY.toFixed(1)}px, 0) translate(-50%, -50%)`;
       record.element.style.opacity = '1';
     }
   }

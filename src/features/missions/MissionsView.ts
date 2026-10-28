@@ -265,7 +265,7 @@ export class MissionDetailView {
           selectedOrganelleId: null,
           clipping: this.mission.kind === 'compare' ? 0.36 : 0.5,
           showLabels: false,
-          autoRotate: true,
+          autoRotate: false,
           reducedMotion,
           onSelect: (id) => this.handleCellSelection(id),
         });
